@@ -29,6 +29,7 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <section class="sub-header">
       <nav>
@@ -45,28 +46,87 @@
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
       </nav>
-      <h1 class="about-page">About Us</h1>
+      <h1>Contact Us</h1>
     </section>
 
-    <!-- -----------------about us---------------------- -->
+    <!-- ---------------------contact us-------------------- -->
 
-    <section class="about-us">
+    <section class="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.33130667514!2d77.27348221184383!3d28.559812475603223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3f2c383254b%3A0xdb2d8449207507d6!2sDon%20Bosco%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1728576705382!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <!-- <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12331.12186528447!2d-77.02266799253854!3d38.89836981078218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c6de5af6e45b%3A0xc2524522d4885d2a!2sWashington%2C%20DC%2C%20USA!5e0!3m2!1sen!2sin!4v1692512872290!5m2!1sen!2sin"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe> -->
+    </section>
+
+    <section class="contact-us">
       <div class="row">
-        <div class="about-col">
-          <img src="Images/Campus 4.jpg" alt="" />
-        </div>
-        <div class="about-col">
-          <h1>State of Art Infrastructure</h1>
-          <p>
-            The college is located in the heart of South Delhi. It is in a sprawling lush green area of 10-plus acres. Approximately 20 meters is the distance from Sukhdev Vihar Metro Station to Don Bosco Institute of Technology. For Delhi Metro, it is the Magenta Line and for the road, it is the MP Road.
-            Air Conditioned classrooms await the students with smart boards, whiteboards, and air purifiers. Wi-Fi-enabled campus adds beauty for the students to make their learning better. A smart library with an e-library system and discussion room adds variety for the students to choose the library as one of the prime locations for them to sit and make their study progress. The computer center is equipped with the latest technology and trained resource personnel is always ready to assist students.
-            One full-sized Foot Ball Ground along with a Cricket Ground, two Basket Ball Grounds with two Volley Ball Grounds and a Badminton Court add beauty to their sense of purpose. Parking for all in the basement makes life secured and safe. All these and more are awaiting you.
-          </p>
-          <a href="" class="hero-btn red-btn">EXPLORE NOW</a>
-        </div>
-      </div>
-    </section>
+        <div class="contact-col">
+          <div>
+            <i class="fa fa-home"></i>
+            <span>
+              <h5>Don Bosco Institute of Technology</h5>
+              <p>Okhla, North Delhi-110025</p>
+            </span>
+          </div>
 
+          <div>
+            <i class="fa fa-phone"></i>
+            <span>
+              <h5>   +011-41033889</h5>
+              <p>call us for queries</p>
+            </span>
+          </div>
+
+          <div>
+            <i class="fa fa-envelope-o"></i>
+            <span>
+              <h5>info@dbti.in</h5>
+              <p>Email us for queries</p>
+            </span>
+          </div>
+        </div>
+
+        <div class="contact-col">
+          <form id="contact-form">
+              <input type="text" name="name" placeholder="Enter your name" required/>
+              <input type="email" name="email" placeholder="Enter your email" required/>
+              <input type="text" name="subject" placeholder="Enter your subject" required/>
+              <textarea name="message" placeholder="Message" rows="10" required></textarea>
+              <button type="submit" class="hero-btn red-btn">Send Message</button>
+          </form>
+      </div>
+      
+      <script>
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+      
+          // Collect form data
+          const formData = new FormData(this);
+      
+          // Send form data using AJAX
+          const xhr = new XMLHttpRequest();
+          xhr.open('POST', 'form_handler.php', true);
+          xhr.onreadystatechange = function() {
+              if (xhr.readyState === XMLHttpRequest.DONE) {
+                  if (xhr.status === 200) {
+                      alert('Message sent successfully!');
+                      // You can update the UI as needed here
+                  } else {
+                      alert('Error sending message.');
+                  }
+              }
+          };
+          xhr.send(formData);
+      });
+      </script>
+      
+    </section>
     <!-- ----------footer---------------- -->
 
     <section class="footer">
@@ -94,7 +154,7 @@
         ></a>
       </div>
       <p>Minor-Project</p>
-      <p>© 2024</p>
+      <p>© 2024 </p>
     </section>
 
     <!--Javascript for Toggle Menu-->
